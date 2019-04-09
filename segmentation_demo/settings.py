@@ -25,7 +25,7 @@ SECRET_KEY = 'cb-q-5_y3$=#)l)$obs9xj*9+81^n)bm1**u49k*fe#36$#he('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 
 
 # Application definition
@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'polls_db',
         'USER': 'polls_admin',
         'PASSWORD': 'abc123',
-        'HOST': 'db',
+        'HOST': 'localhost',
         'PORT': '5432'
     }
 }

@@ -2,10 +2,11 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from .models import Question, Choice
 from django.urls import reverse
+from django.utils import timezone
 # Create your views here.
 
 def index(request):
-    latest_question_list = Question.objects.order_by('-pub_date')[:6]
+    latest_question_list = Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:6]
     ctx = {'latest_question_list': latest_question_list}
     return render(request, 'polls/index.html', context=ctx)
 
