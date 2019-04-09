@@ -5,7 +5,7 @@ from django.urls import reverse
 # Create your views here.
 
 def index(request):
-    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    latest_question_list = Question.objects.order_by('-pub_date')[:6]
     ctx = {'latest_question_list': latest_question_list}
     return render(request, 'polls/index.html', context=ctx)
 
@@ -32,7 +32,7 @@ def vote(request, question_id):
         # Redisplay the question voting form
         ctx = {
             'question': question,
-            'error_message': "You didn't select a choice."
+            'error_message': "You didn't select a choice. And, you must select one in order to vote for it."
         }
         return render(request, 'polls/detail.html', context=ctx)
     else:

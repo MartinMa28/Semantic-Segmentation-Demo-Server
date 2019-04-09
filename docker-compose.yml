@@ -1,0 +1,27 @@
+version: '3.7'
+
+services: 
+  db:
+    container_name: demo_postgres
+    image: postgres:10.7-alpine
+    restart: always
+    environment: 
+      POSTGRES_USER: polls_admin
+      POSTGRES_DB: polls_db
+      POSTGRES_PASSWORD: abc123
+      
+
+  web:
+    container_name: segmentation_demo
+    build:
+      context: .
+      args: 
+        USER: "django"
+    restart: always
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes: 
+      - .:/home/django/demo
+    ports: 
+      - '8000:8000'
+    depends_on: 
+      - db
