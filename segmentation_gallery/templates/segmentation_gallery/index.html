@@ -7,12 +7,34 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- static CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'segmentation_gallery/css/styles.css' %}">
 
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    <h2>{{ greeting }}</h2>
+    <!-- <div class="container-fluid">
+      <h1>Hello, world!</h1>
+      <h2>{{ greeting }}</h2>
+    </div> -->
+    <header>
+        <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="https://github.com/MartinMa28">Yilin Ma Github profile</a>
+        </nav>
+    </header>
+
+    <div class="container" id="main-content-container">
+      <div class="row">
+        <div class="col-sm-6 ml-auto" id="image-container">
+          <img src="{% static 'segmentation_gallery/imgs/2008_000253.jpg' %}" alt="test bootstrap alignment">
+        </div>
+        <div class="col-sm-6 ml-auto" id="description-container">
+          Some descriptions
+        </div>
+      </div>
+    </div>
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
