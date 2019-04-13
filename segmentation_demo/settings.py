@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'polls_db',
         'USER': 'polls_admin',
         'PASSWORD': 'abc123',
-        'HOST': 'db',
+        'HOST': 'localhost',
         'PORT': '5432'
     }
 }
